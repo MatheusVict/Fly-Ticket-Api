@@ -1,10 +1,6 @@
 package entity.usecases.retrieve
 
-import entity.ticket.Airport
-import entity.ticket.Company
-import entity.ticket.Ticket
 import entity.usecases.integration.AirlineTicketIntegration
-import entity.usecases.integration.dto.AirlineTicketIntegrationOutput
 import entity.usecases.integration.dto.IntegrationOutput
 import entity.usecases.integration.dto.RetrieveTicketOutput
 import io.mockk.every
@@ -65,7 +61,114 @@ class RetrieveTicketTest {
         assertEquals(expected, actual)
     }
 
-    // retrieve success with an integration fail
+    @Test
+    fun `should return retrieve success with smallest ticket price and on integration fail`() {
+        val integrationInput = createAirlineTicketInput()
+
+        val retrieveTicketInput = createRetrieveTicketInput()
+        val firstIntegrationResponse = IntegrationOutput.IntegrationSuccess(
+            data = createAirlineTicketIntegrationOutput(
+                companyName = "LATAM Airlines Brasil",
+                lowestPrice = 100.0
+            )
+        )
+
+        val secondIntegrationResponse = IntegrationOutput.IntegrationFailure(
+            error = "Integration error"
+        )
+
+        every {
+            firstIntegration.integrate(integrationInput)
+        } returns firstIntegrationResponse
+
+        every {
+            secondIntegration.integrate(integrationInput)
+        } returns secondIntegrationResponse
+
+        val expected = RetrieveTicketOutput.RetrieveTicketSuccess(
+            ticket = createTicket(
+                companyName = "LATAM Airlines Brasil",
+                airportOrigin = "FLN",
+                airportDestination = "GRU",
+                price = 100.0
+            )
+        )
+
+        val actual = retrieveTicket.retrieve(retrieveTicketInput)
+
+        assertEquals(expected, actual)
+    }
+
+    @Test
+    fun `should return retrieve error when all integration fail`() {
+        val integrationInput = createAirlineTicketInput()
+
+        val retrieveTicketInput = createRetrieveTicketInput()
+        val firstIntegrationResponse = IntegrationOutput.IntegrationFailure(
+            error = "Integration error"
+        )
+
+        val secondIntegrationResponse = IntegrationOutput.IntegrationFailure(
+            error = "Integration error"
+        )
+
+        every {
+            firstIntegration.integrate(integrationInput)
+        } returns firstIntegrationResponse
+
+        every {
+            secondIntegration.integrate(integrationInput)
+        } returns secondIntegrationResponse
+
+        val expected = RetrieveTicketOutput.RetrieveTicketFailure(
+            message = "Could not extract ticket for FLN to GRU"
+        )
+
+        val actual = retrieveTicket.retrieve(retrieveTicketInput)
+
+        assertEquals(expected, actual)
+    }
+
+    @Test
+    fun `should return retrieve with two integrations returning tickets with same lowest price`() {
+        val integrationInput = createAirlineTicketInput()
+
+        val retrieveTicketInput = createRetrieveTicketInput()
+        val firstIntegrationResponse = IntegrationOutput.IntegrationSuccess(
+            data = createAirlineTicketIntegrationOutput(
+                companyName = "LATAM Airlines Brasil",
+                lowestPrice = 100.0
+            )
+        )
+
+        val secondIntegrationResponse = IntegrationOutput.IntegrationSuccess(
+            data = createAirlineTicketIntegrationOutput(
+                companyName = "GOL Airlines Brasil",
+                lowestPrice = 100.0
+            )
+        )
+
+        every {
+            firstIntegration.integrate(integrationInput)
+        } returns firstIntegrationResponse
+
+        every {
+            secondIntegration.integrate(integrationInput)
+        } returns secondIntegrationResponse
+
+        val expected = RetrieveTicketOutput.RetrieveTicketSuccess(
+            ticket = createTicket(
+                companyName = "LATAM Airlines Brasil",
+                airportOrigin = "FLN",
+                airportDestination = "GRU",
+                price = 100.0
+            )
+        )
+
+        val actual = retrieveTicket.retrieve(retrieveTicketInput)
+
+        assertEquals(expected, actual)
+    }
 
     // retrieve success with two valid integrations, tickets with same price (100.0,100.0)
 

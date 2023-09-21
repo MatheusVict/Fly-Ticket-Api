@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c4cf6aa-ee4d-4d14-86d5-6a0fe2943c42" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/utils/ModelBuilder.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
