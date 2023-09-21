@@ -1,3 +1,6 @@
+
+val mockk_version: String by project
+
 plugins {
     kotlin("jvm") version "1.9.0"
     application
@@ -12,6 +15,7 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
+    testImplementation("io.mockk:mockk:$mockk_version")
 }
 
 tasks.test {
