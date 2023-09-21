@@ -4,15 +4,17 @@ import entity.ticket.Airport
 import entity.ticket.Company
 import entity.ticket.Ticket
 import entity.usecases.integration.AirlineTicketIntegration
-import entity.usecases.integration.dto.AirLaneTicketIntegrationInput
 import entity.usecases.integration.dto.AirlineTicketIntegrationOutput
 import entity.usecases.integration.dto.IntegrationOutput
 import entity.usecases.integration.dto.RetrieveTicketOutput
-import entity.usecases.retrieve.dto.RetrieveTicketInput
 import io.mockk.every
 import io.mockk.mockk
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
+import utils.ModelBuilder.createAirlineTicketInput
+import utils.ModelBuilder.createAirlineTicketIntegrationOutput
+import utils.ModelBuilder.createRetrieveTicketInput
+import utils.ModelBuilder.createTicket
 
 class RetrieveTicketTest {
 
@@ -24,34 +26,20 @@ class RetrieveTicketTest {
 
     @Test
     fun `should return retrieve with success when ticket have smallest price`() {
-        val integrationInput = AirLaneTicketIntegrationInput(
-            origin = "ORIGIN",
-            destination = "DESTINATION",
-            date = "10/11/2023"
-        )
+        val integrationInput = createAirlineTicketInput()
 
-        val retrieveTicketInput = RetrieveTicketInput(
-            origin = "ORIGIN",
-            destination = "DESTINATION",
-            date = "10/11/2023"
-        )
+        val retrieveTicketInput = createRetrieveTicketInput()
         val firstIntegrationResponse = IntegrationOutput.IntegrationSuccess(
-            data = AirlineTicketIntegrationOutput(
-                companyName = "GOL",
-                departureDate = "10/11/2023",
-                lowestPrice = 100.0,
-                originAirport = "ORIGIN",
-                destinationAirport = "DESTINATION"
+            data = createAirlineTicketIntegrationOutput(
+                companyName = "LATAM Airlines Brasil",
+                lowestPrice = 100.0
             )
         )
 
         val secondIntegrationResponse = IntegrationOutput.IntegrationSuccess(
-            data = AirlineTicketIntegrationOutput(
-                companyName = "LATAM",
-                departureDate = "10/11/2023",
-                lowestPrice = 150.0,
-                originAirport = "ORIGIN",
-                destinationAirport = "DESTINATION"
+            data = createAirlineTicketIntegrationOutput(
+                companyName = "GOL Airlines Brasil",
+                lowestPrice = 150.0
             )
         )
 
@@ -64,11 +52,10 @@ class RetrieveTicketTest {
         } returns secondIntegrationResponse
 
         val expected = RetrieveTicketOutput.RetrieveTicketSuccess(
-            ticket = Ticket(
-                company = Company("GOL"),
-                origin = Airport("ORIGIN"),
-                destination = Airport("DESTINATION"),
-                date = "10/11/2023",
+            ticket = createTicket(
+                companyName = "LATAM Airlines Brasil",
+                airportOrigin = "FLN",
+                airportDestination = "GRU",
                 price = 100.0
             )
         )
