@@ -26,7 +26,7 @@ dependencies {
     implementation("io.ktor:ktor-server-content-negotiation:$ktor_version")
 
     implementation("com.squareup.okhttp3:okhttp:$okhttp3_version")
-    implementation("io.insert-koin:koin-ktor:$koin_version")
+    /*implementation("io.insert-koin:koin-ktor:$koin_version")*/
     implementation("ch.qos.logback:logback-classic:$logback_version")
 
     testImplementation(kotlin("test"))

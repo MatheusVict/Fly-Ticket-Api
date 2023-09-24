@@ -5,34 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c4cf6aa-ee4d-4d14-86d5-6a0fe2943c42" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/integration/exception/ExtractorException.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/integration/http/ConnectionHttpClient.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/integration/http/dto/ClientHttpResponse.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/integration/http/dto/StepResponse.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/integration/http/okhttp/ConnectionOkHttpClient.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/integration/ticket/latam/LatamTicketIntegration.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/integration/ticket/latam/dto/Constants.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/integration/ticket/latam/dto/LatamTicketRequest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/integration/ticket/latam/dto/LatamTicketResponse.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/integration/ticket/latam/extractor/LatamTicketExtractor.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/integration/ticket/latam/steps/GetCookiesStep.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/integration/ticket/latam/steps/GetTicketsStep.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/shared/exception/ObjectConversionException.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/shared/extension/LoggerExtensions.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/shared/extension/StringExtensions.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/usecases/integration/AirlineTicketIntegration.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/integration/ticket/latam/steps/GetCookiesStepTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/integration/ticket/latam/steps/GetTicketsStepTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/entity/usecases/integration/AirlineTicketIntegration.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/entity/usecases/integration/dto/AirLaneTicketIntegrationInput.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/usecases/integration/dto/AirlineTicketIntegrationInput.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/entity/usecases/integration/dto/AirlineTicketIntegrationOutput.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/usecases/integration/dto/AirlineTicketIntegrationOutput.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/entity/usecases/integration/dto/IntegrationOutput.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/usecases/integration/dto/IntegrationOutput.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/entity/usecases/integration/dto/RetrieveTicketOutput.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/usecases/integration/dto/RetrieveTicketOutput.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/entity/usecases/retrieve/RetrieveTicket.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/usecases/retrieve/RetrieveTicket.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/entity/usecases/retrieve/dto/RetrieveTicketInput.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/usecases/retrieve/dto/RetrieveTicketInput.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/entity/usecases/retrieve/RetrieveTicketTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/entity/usecases/retrieve/RetrieveTicketTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/utils/ModelBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/utils/ModelBuilder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/integration/ticket/latam/LatamTicketIntegration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/integration/ticket/latam/LatamTicketIntegration.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/integration/ticket/latam/steps/GetTicketsStep.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/integration/ticket/latam/steps/GetTicketsStep.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/shared/extension/StringExtensions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/shared/extension/StringExtensions.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,12 +41,12 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Kotlin Interface" />
         <option value="Class" />
         <option value="Kotlin Data Class" />
         <option value="Kotlin Object" />
         <option value="Kotlin Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -86,26 +65,99 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "main",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="integration.ticket.latam.steps" />
       <recent name="entity.usecases.retrieve" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.RetrieveTicketTest">
+  <component name="RunManager" selected="Gradle.GetTicketsStepTest">
+    <configuration name="GetCookiesStepTest.should return StepFailure when not execute step successfully" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;integration.ticket.latam.steps.GetCookiesStepTest.should return StepFailure when not execute step successfully&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="GetCookiesStepTest.should return StepSuccess when execute step successfully" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;integration.ticket.latam.steps.GetCookiesStepTest.should return StepSuccess when execute step successfully&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="GetTicketsStepTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;integration.ticket.latam.steps.GetTicketsStepTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="RetrieveTicketTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -130,7 +182,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="RetrieveTicketTest.should return retrieve with success when ticket have smallest price" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Tests in 'airline-api.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -142,8 +194,6 @@
         <option name="taskNames">
           <list>
             <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;entity.usecases.retrieve.RetrieveTicketTest.should return retrieve with success when ticket have smallest price&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -156,8 +206,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.GetTicketsStepTest" />
+        <item itemvalue="Gradle.Tests in 'airline-api.test'" />
+        <item itemvalue="Gradle.GetCookiesStepTest.should return StepFailure when not execute step successfully" />
+        <item itemvalue="Gradle.GetCookiesStepTest.should return StepSuccess when execute step successfully" />
         <item itemvalue="Gradle.RetrieveTicketTest" />
-        <item itemvalue="Gradle.RetrieveTicketTest.should return retrieve with success when ticket have smallest price" />
       </list>
     </recent_temporary>
   </component>

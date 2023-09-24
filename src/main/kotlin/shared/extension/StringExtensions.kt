@@ -18,4 +18,7 @@ object StringExtensions {
             throw ObjectConversionException("Could not convert ${e.message}")
         }
     }
+
+    fun String.removeBreakLines() =
+        this.trimIndent().replace("\n", "")
 }
