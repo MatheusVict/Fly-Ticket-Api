@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c4cf6aa-ee4d-4d14-86d5-6a0fe2943c42" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/integration/ticket/latam/steps/GetCookiesStepTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/integration/ticket/latam/steps/GetTicketsStepTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/integration/ticket/latam/extractor/LatamTicketExtractorTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/utils/TestUtils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/tickets/latam_tickets_reponse.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/integration/ticket/latam/LatamTicketIntegration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/integration/ticket/latam/LatamTicketIntegration.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/integration/ticket/latam/steps/GetTicketsStep.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/integration/ticket/latam/steps/GetTicketsStep.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/shared/extension/StringExtensions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/shared/extension/StringExtensions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/integration/ticket/latam/dto/LatamTicketRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/integration/ticket/latam/dto/LatamTicketRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/integration/ticket/latam/dto/LatamTicketResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/integration/ticket/latam/dto/LatamTicketResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/integration/ticket/latam/extractor/LatamTicketExtractor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/integration/ticket/latam/extractor/LatamTicketExtractor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/utils/ModelBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/utils/ModelBuilder.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,9 +46,9 @@
         <option value="Kotlin Interface" />
         <option value="Class" />
         <option value="Kotlin Data Class" />
-        <option value="Kotlin Object" />
-        <option value="Kotlin Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Kotlin Class" />
+        <option value="Kotlin Object" />
       </list>
     </option>
   </component>
@@ -81,11 +83,12 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="integration.ticket.latam.extractor" />
       <recent name="integration.ticket.latam.steps" />
       <recent name="entity.usecases.retrieve" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.GetTicketsStepTest">
+  <component name="RunManager" selected="Gradle.LatamTicketExtractorTest.should extract latam ticket response successfully">
     <configuration name="GetCookiesStepTest.should return StepFailure when not execute step successfully" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -100,30 +103,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;integration.ticket.latam.steps.GetCookiesStepTest.should return StepFailure when not execute step successfully&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="GetCookiesStepTest.should return StepSuccess when execute step successfully" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;integration.ticket.latam.steps.GetCookiesStepTest.should return StepSuccess when execute step successfully&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -158,7 +137,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="RetrieveTicketTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LatamTicketExtractorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -171,7 +150,31 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;entity.usecases.retrieve.RetrieveTicketTest&quot;" />
+            <option value="&quot;integration.ticket.latam.extractor.LatamTicketExtractorTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="LatamTicketExtractorTest.should extract latam ticket response successfully" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;integration.ticket.latam.extractor.LatamTicketExtractorTest.should extract latam ticket response successfully&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -206,11 +209,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.LatamTicketExtractorTest.should extract latam ticket response successfully" />
+        <item itemvalue="Gradle.LatamTicketExtractorTest" />
         <item itemvalue="Gradle.GetTicketsStepTest" />
         <item itemvalue="Gradle.Tests in 'airline-api.test'" />
         <item itemvalue="Gradle.GetCookiesStepTest.should return StepFailure when not execute step successfully" />
-        <item itemvalue="Gradle.GetCookiesStepTest.should return StepSuccess when execute step successfully" />
-        <item itemvalue="Gradle.RetrieveTicketTest" />
       </list>
     </recent_temporary>
   </component>
@@ -235,5 +238,51 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/test/kotlin/integration/ticket/latam/extractor/LatamTicketExtractorTest.kt</url>
+          <line>24</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/test/kotlin/integration/ticket/latam/extractor/LatamTicketExtractorTest.kt</url>
+          <line>31</line>
+          <properties>
+            <option name="lambda-ordinal" value="0" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/test/kotlin/integration/ticket/latam/extractor/LatamTicketExtractorTest.kt</url>
+          <line>32</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/test/kotlin/integration/ticket/latam/extractor/LatamTicketExtractorTest.kt</url>
+          <line>33</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/test/kotlin/integration/ticket/latam/extractor/LatamTicketExtractorTest.kt</url>
+          <line>36</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/test/kotlin/integration/ticket/latam/extractor/LatamTicketExtractorTest.kt</url>
+          <line>37</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.opentest4j.AssertionFailedError" package="org.opentest4j" />
+          <option name="timeStamp" value="8" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

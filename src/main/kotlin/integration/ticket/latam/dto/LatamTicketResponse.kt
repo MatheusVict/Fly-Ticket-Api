@@ -1,29 +1,34 @@
 package integration.ticket.latam.dto
 
-class LatamTicketResponse (
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class LatamTicketResponse (
     val content: List<Content>
 )
-
+@Serializable
 data class Content(
-    val Summary: Summary,
+    val summary: Summary,
 )
 
+@Serializable
 data class Summary(
     val origin: Origin,
     val destination: Destination,
     val lowestPrice: LowestPrice
 )
 
+@Serializable
 data class Origin(
     val departure: String,
     val iataCode: String
 )
-
+@Serializable
 data class Destination(
-    val departure: String,
     val iataCode: String
 )
 
+@Serializable
 data class LowestPrice(
     val amount: Double,
 )

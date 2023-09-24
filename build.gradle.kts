@@ -8,6 +8,7 @@ val koin_version: String by project
 
 plugins {
     kotlin("jvm") version "1.9.0"
+    kotlin("plugin.serialization") version "1.9.0"
     application
 }
 

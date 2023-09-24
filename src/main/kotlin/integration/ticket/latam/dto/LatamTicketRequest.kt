@@ -2,7 +2,7 @@ package integration.ticket.latam.dto
 
 import usecases.integration.dto.AirlineTicketIntegrationInput
 
-class LatamTicketRequest (
+data class LatamTicketRequest (
     val origin: String,
     val destination: String,
     val outFrom: String

@@ -20,7 +20,7 @@ class LatamTicketExtractor(
         }
 
         return when (val response = getTicketsStep.doRequest(request, cookies)) {
-            is StepResponse.StepSuccess -> response.payload.convertTo<LatamTicketResponse>()
+            is StepResponse.StepSuccess -> response.payload.convertTo()
             else -> throw ExtractorException("Error when extracte response from getTicketsStep $response")
         }
     }
