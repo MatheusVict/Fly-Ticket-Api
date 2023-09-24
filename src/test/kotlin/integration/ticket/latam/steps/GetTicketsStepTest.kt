@@ -1,10 +1,11 @@
 package integration.ticket.latam.steps
 
-import integration.http.ConnectionHttpClient
-import integration.http.dto.ClientHttpResponse
-import integration.http.dto.StepResponse
-import integration.ticket.latam.dto.Constants.BASE_SERVICE_URL
-import integration.ticket.latam.dto.LatamTicketRequest
+import com.github.ata.integration.http.ConnectionHttpClient
+import com.github.ata.integration.http.dto.ClientHttpResponse
+import com.github.ata.integration.http.dto.StepResponse
+import com.github.ata.integration.ticket.latam.dto.Constants.BASE_SERVICE_URL
+import com.github.ata.integration.ticket.latam.dto.LatamTicketRequest
+import com.github.ata.integration.ticket.latam.steps.GetTicketsStep
 import io.mockk.every
 import io.mockk.mockk
 import org.junit.jupiter.api.Assertions.assertEquals

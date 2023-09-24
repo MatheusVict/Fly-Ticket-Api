@@ -1,15 +1,16 @@
 package integration.ticket.latam.extractor
 
-import integration.exception.ExtractorException
-import integration.http.dto.StepResponse.StepFailure
-import integration.http.dto.StepResponse.StepSuccess
-import integration.ticket.latam.steps.GetCookiesStep
-import integration.ticket.latam.steps.GetTicketsStep
+import com.github.ata.integration.exception.ExtractorException
+import com.github.ata.integration.ticket.latam.extractor.LatamTicketExtractor
+import com.github.ata.integration.http.dto.StepResponse.StepFailure
+import com.github.ata.integration.http.dto.StepResponse.StepSuccess
+import com.github.ata.integration.ticket.latam.steps.GetCookiesStep
+import com.github.ata.integration.ticket.latam.steps.GetTicketsStep
 import io.mockk.every
 import io.mockk.mockk
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
-import shared.exception.ObjectConversionException
+import com.github.ata.shared.exception.ObjectConversionException
 import utils.ModelBuilder.createLatamContentResponse
 import utils.ModelBuilder.createLatamTicketRequest
 import utils.TestUtils.getFileContent

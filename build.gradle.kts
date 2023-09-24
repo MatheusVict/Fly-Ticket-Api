@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 val okhttp3_version: String by project
 val mockk_version: String by project
@@ -11,6 +12,7 @@ plugins {
     kotlin("plugin.serialization") version "1.9.0"
     application
 }
+
 
 group = "io.matheus"
 version = "1.0-SNAPSHOT"
@@ -27,7 +29,7 @@ dependencies {
     implementation("io.ktor:ktor-server-content-negotiation:$ktor_version")
 
     implementation("com.squareup.okhttp3:okhttp:$okhttp3_version")
-    /*implementation("io.insert-koin:koin-ktor:$koin_version")*/
+    implementation("io.insert-koin:koin-ktor:$koin_version")
     implementation("ch.qos.logback:logback-classic:$logback_version")
 
     testImplementation(kotlin("test"))
@@ -38,10 +40,18 @@ tasks.test {
     useJUnitPlatform()
 }
 
+
 kotlin {
-    jvmToolchain(8)
+    jvmToolchain {
+        (this).languageVersion.set(JavaLanguageVersion.of(11))
+    }
 }
 
 application {
-    mainClass.set("MainKt")
+    mainClass.set("com.github.ata.ApplicationKt")
+}
+
+
+tasks.withType<KotlinCompile>().configureEach {
+    kotlinOptions.jvmTarget = "11"
 }
