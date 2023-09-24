@@ -1,8 +1,8 @@
 package com.github.ata.shared.extension
 
+import com.github.ata.shared.exception.ObjectConversionException
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
-import com.github.ata.shared.exception.ObjectConversionException
 
 object StringExtensions {
     val logger = getLogger()
@@ -21,4 +21,7 @@ object StringExtensions {
 
     fun String.removeBreakLines() =
         this.trimIndent().replace("\n", "")
+
+    fun String.timestampToSimpleDate(delimiter: String = "-", separator: String = "-") =
+        this.split("T").first().split(delimiter).reversed().joinToString(separator)
 }

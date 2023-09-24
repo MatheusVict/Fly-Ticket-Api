@@ -1,11 +1,25 @@
 package com.github.ata.integration.ticket.latam.dto
 
+import com.github.ata.integration.ticket.latam.dto.Constants.COMPANY_NAME
+import com.github.ata.shared.extension.StringExtensions.timestampToSimpleDate
+import com.github.ata.usecases.integration.dto.AirlineTicketIntegrationOutput
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class LatamTicketResponse (
+data class LatamTicketResponse(
     val content: List<Content>
-)
+) {
+    fun toAirlineTicketOutput() = content.first().let {
+        AirlineTicketIntegrationOutput(
+            companyName = COMPANY_NAME,
+            lowestPrice = it.summary.lowestPrice.amount,
+            departureDate = it.summary.origin.departure.timestampToSimpleDate(),
+            originAirport = it.summary.origin.iataCode,
+            destinationAirport = it.summary.destination.iataCode
+        )
+    }
+}
+
 @Serializable
 data class Content(
     val summary: Summary,
@@ -23,6 +37,7 @@ data class Origin(
     val departure: String,
     val iataCode: String
 )
+
 @Serializable
 data class Destination(
     val iataCode: String

@@ -2,9 +2,12 @@ package com.github.ata.ktor.plugins
 
 import com.github.ata.integration.http.ConnectionHttpClient
 import com.github.ata.integration.http.okhttp.ConnectionOkHttpClient
+import com.github.ata.integration.ticket.latam.LatamTicketIntegration
 import com.github.ata.integration.ticket.latam.extractor.LatamTicketExtractor
 import com.github.ata.integration.ticket.latam.steps.GetCookiesStep
 import com.github.ata.integration.ticket.latam.steps.GetTicketsStep
+import com.github.ata.usecases.integration.AirlineTicketIntegration
+import com.github.ata.usecases.retrieve.RetrieveTicket
 import io.ktor.server.application.*
 import org.koin.dsl.module
 import org.koin.ktor.plugin.Koin
@@ -20,4 +23,7 @@ val appModule = module(createdAtStart = true) {
     single { GetCookiesStep(get()) }
     single { GetTicketsStep(get()) }
     single { LatamTicketExtractor(get(), get()) }
+    single<AirlineTicketIntegration> { LatamTicketIntegration(get()) }
+
+    single { RetrieveTicket(getAll()) }
 }
