@@ -1,4 +1,4 @@
-package entity.usecases.integration.dto
+package usecases.integration.dto
 
 import entity.ticket.Ticket
 

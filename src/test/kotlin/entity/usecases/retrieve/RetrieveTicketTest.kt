@@ -1,12 +1,13 @@
 package entity.usecases.retrieve
 
-import entity.usecases.integration.AirlineTicketIntegration
-import entity.usecases.integration.dto.IntegrationOutput
-import entity.usecases.integration.dto.RetrieveTicketOutput
+import usecases.integration.AirlineTicketIntegration
+import usecases.integration.dto.IntegrationOutput
+import usecases.integration.dto.RetrieveTicketOutput
 import io.mockk.every
 import io.mockk.mockk
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
+import usecases.retrieve.RetrieveTicket
 import utils.ModelBuilder.createAirlineTicketInput
 import utils.ModelBuilder.createAirlineTicketIntegrationOutput
 import utils.ModelBuilder.createRetrieveTicketInput

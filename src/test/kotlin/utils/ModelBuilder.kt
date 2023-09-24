@@ -3,9 +3,9 @@ package utils
 import entity.ticket.Airport
 import entity.ticket.Company
 import entity.ticket.Ticket
-import entity.usecases.integration.dto.AirLaneTicketIntegrationInput
-import entity.usecases.integration.dto.AirlineTicketIntegrationOutput
-import entity.usecases.retrieve.dto.RetrieveTicketInput
+import usecases.integration.dto.AirlineTicketIntegrationInput
+import usecases.integration.dto.AirlineTicketIntegrationOutput
+import usecases.retrieve.dto.RetrieveTicketInput
 
 object ModelBuilder {
 
@@ -27,7 +27,7 @@ object ModelBuilder {
         origin: String = "FLN",
         destination: String = "GRU",
         date: String = "10/12/2023"
-    ) = AirLaneTicketIntegrationInput(
+    ) = AirlineTicketIntegrationInput(
         origin = origin,
         destination = destination,
         date = date

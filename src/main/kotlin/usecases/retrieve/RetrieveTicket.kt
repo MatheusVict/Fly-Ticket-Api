@@ -1,10 +1,10 @@
-package entity.usecases.retrieve
+package usecases.retrieve
 
 import entity.ticket.Ticket
-import entity.usecases.integration.AirlineTicketIntegration
-import entity.usecases.integration.dto.IntegrationOutput
-import entity.usecases.integration.dto.RetrieveTicketOutput
-import entity.usecases.retrieve.dto.RetrieveTicketInput
+import usecases.integration.AirlineTicketIntegration
+import usecases.integration.dto.IntegrationOutput
+import usecases.integration.dto.RetrieveTicketOutput
+import usecases.retrieve.dto.RetrieveTicketInput
 
 class RetrieveTicket(
     private val integrations: List<AirlineTicketIntegration>
