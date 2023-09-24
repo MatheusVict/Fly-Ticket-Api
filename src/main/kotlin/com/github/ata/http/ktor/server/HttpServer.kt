@@ -1,4 +1,4 @@
-package com.github.ata.ktor.server
+package com.github.ata.http.ktor.server
 
 import io.ktor.server.netty.*
 

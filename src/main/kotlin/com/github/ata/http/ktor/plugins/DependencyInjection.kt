@@ -1,4 +1,4 @@
-package com.github.ata.ktor.plugins
+package com.github.ata.http.ktor.plugins
 
 import com.github.ata.integration.http.ConnectionHttpClient
 import com.github.ata.integration.http.okhttp.ConnectionOkHttpClient
