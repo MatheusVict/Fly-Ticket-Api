@@ -1,5 +1,6 @@
 package com.github.ata.integration.ticket.latam.dto
 
+import com.github.ata.shared.extension.StringExtensions.revertDate
 import com.github.ata.usecases.integration.dto.AirlineTicketIntegrationInput
 
 data class LatamTicketRequest (
@@ -11,7 +12,7 @@ data class LatamTicketRequest (
         fun fromAirlineTicketInput(input: AirlineTicketIntegrationInput) = LatamTicketRequest(
             origin = input.origin,
             destination = input.destination,
-            outFrom = input.date
+            outFrom = input.date.revertDate()
         )
     }
 }

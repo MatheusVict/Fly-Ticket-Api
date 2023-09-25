@@ -40,7 +40,7 @@ class ConnectionOkHttpClient : ConnectionHttpClient {
 
     private fun buildResponse(response: Response) = ClientHttpResponse(
         headers = response.headers.toMultimap(),
-        body = response.body?.toString(),
+        body = response.body?.string(),
         statusCode = response.code
     )
 }

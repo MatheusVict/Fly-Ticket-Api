@@ -19,7 +19,7 @@ class GetTicketsStep(
             &inFrom=null
             &inOfferId=null
             &outFlightDate=null
-            &outFrom=${request.outFrom}
+            &outbound=${request.outFrom}
             &outOfferId=null
             &adult=1
             &child=0

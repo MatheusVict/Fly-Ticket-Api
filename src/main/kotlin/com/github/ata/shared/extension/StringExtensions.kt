@@ -24,4 +24,7 @@ object StringExtensions {
 
     fun String.timestampToSimpleDate(delimiter: String = "-", separator: String = "-") =
         this.split("T").first().split(delimiter).reversed().joinToString(separator)
+
+    fun String.revertDate(delimiter: String = "-", separator: String = "-") =
+        this.split(delimiter).reversed().joinToString(separator)
 }
