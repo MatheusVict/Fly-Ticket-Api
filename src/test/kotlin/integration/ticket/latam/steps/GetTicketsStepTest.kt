@@ -97,7 +97,7 @@ class GetTicketsStepTest {
                 "&inFrom=null" +
                 "&inOfferId=null" +
                 "&outFlightDate=null" +
-                "&outFrom=01/01/2023" +
+                "&outbound=01/01/2023" +
                 "&outOfferId=null" +
                 "&adult=1" +
                 "&child=0" +
